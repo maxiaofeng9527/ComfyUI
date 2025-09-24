@@ -19,6 +19,9 @@ if __name__ == "__main__":
     #NOTE: These do not do anything on core ComfyUI, they are for custom nodes.
     os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
     os.environ['DO_NOT_TRACK'] = '1'
+    
+    # 设置transparent-background模型路径，避免占用C盘空间
+    os.environ['TRANSPARENT_BACKGROUND_FILE_PATH'] = os.path.join(os.path.dirname(os.path.realpath(__file__)), "models")
 
 setup_logger(log_level=args.verbose, use_stdout=args.log_stdout)
 
